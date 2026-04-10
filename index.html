@@ -248,7 +248,7 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
       </div>
     </div>
     <div class="cc">
-      <div><div class="ct">Duration Cohort Split</div><div class="cs">Acute / Subacute / Chronic proportion (n=500)</div></div>
+      <div><div class="ct">Pain Duration Split</div><div class="cs">By raw duration field &middot; Acute &lt;2 wks / Subacute 2&ndash;12 wks / Chronic &gt;12 wks (n=500)</div></div>
       <div class="cw"><canvas id="c-durdough"></canvas></div>
     </div>
   </div>
@@ -330,7 +330,7 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
     <div class="cc"><div><div class="ct">Pathway Assignment by Race / Ethnicity</div><div class="cs">100% stacked bar &middot; proportional pathway assignment per group</div></div><div class="cw"><canvas id="c-race"></canvas></div></div>
   </div>
   <div class="g2">
-    <div class="cc"><div><div class="ct">Pathway Assignment by Occupation Type</div><div class="cs">Sedentary &middot; Manual &middot; Mixed &middot; Retired</div></div><div class="cw"><canvas id="c-occ"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Pathway Assignment by Occupation Type</div><div class="cs">Service &middot; Desk/Office &middot; Manual Labor &middot; Healthcare &middot; Other</div></div><div class="cw"><canvas id="c-occ"></canvas></div></div>
     <div class="cc"><div><div class="ct">Pathway Assignment by Census Region</div><div class="cs">Northeast &middot; Midwest &middot; South &middot; West</div></div><div class="cw"><canvas id="c-reg"></canvas></div></div>
   </div>
   <div class="note ni2">
@@ -469,9 +469,9 @@ Chart.defaults.font.family="'Inter','Helvetica Neue',sans-serif";
 Chart.defaults.font.size=11;
 
 new Chart('c-pathbar',{type:'bar',data:{labels:LABELS,datasets:[{data:[85,45,181,189],backgroundColor:pc(),borderRadius:6,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
-new Chart('c-durdough',{type:'doughnut',data:{labels:['Acute (130)','Subacute (181)','Chronic (189)'],datasets:[{data:[130,181,189],backgroundColor:[cv('--c1'),cv('--c3'),cv('--c4')],borderWidth:0,hoverOffset:8}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'bottom',labels:{color:tm(),padding:12,boxWidth:11}}}}});
+new Chart('c-durdough',{type:'doughnut',data:{labels:['Acute <2 wks (85)','Subacute 2–12 wks (181)','Chronic >12 wks (234)'],datasets:[{data:[85,181,234],backgroundColor:[cv('--c1'),cv('--c3'),cv('--c4')],borderWidth:0,hoverOffset:8}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'bottom',labels:{color:tm(),padding:12,boxWidth:11}}}}});
 
-new Chart('c-durcat',{type:'bar',data:{labels:['Acute','Subacute','Chronic'],datasets:[{data:[130,181,189],backgroundColor:[cv('--c1'),cv('--c3'),cv('--c4')],borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
+new Chart('c-durcat',{type:'bar',data:{labels:['Acute','Subacute','Chronic'],datasets:[{data:[85,181,234],backgroundColor:[cv('--c1'),cv('--c3'),cv('--c4')],borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
 new Chart('c-sevcat',{type:'bar',data:{labels:['Mild','Moderate','Severe'],datasets:[{data:[148,192,160],backgroundColor:[cv('--suc'),cv('--war'),cv('--err')],borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
 new Chart('c-oswcat',{type:'bar',data:{labels:['Minimal','Moderate','Severe','Crippled','Bed-bound'],datasets:[{data:[131,153,110,77,29],backgroundColor:cv('--pri'),borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm(),maxRotation:25}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
 
