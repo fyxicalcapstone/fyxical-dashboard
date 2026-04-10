@@ -483,7 +483,13 @@ var eqOpts={responsive:true,plugins:{legend:{position:'bottom',labels:{color:tm(
 function eqDs(rows){return LABELS.map(function(lbl,i){return{label:lbl,data:rows.map(function(r){return r[i];}),backgroundColor:pc()[i],stack:'s'};});}
 new Chart('c-sex',{type:'bar',data:{labels:['Female','Male','Non-binary'],datasets:eqDs([[34,29,36],[18,17,10],[34,34,37],[14,20,17]])},options:eqOpts});
 new Chart('c-race',{type:'bar',data:{labels:['White','Hispanic','Black','Asian','Other'],datasets:eqDs([[36,33,32,38,35],[16,18,17,15,19],[34,32,34,31,35],[14,17,17,16,11]])},options:eqOpts});
-new Chart('c-occ',{type:'bar',data:{labels:['Sedentary','Manual','Mixed','Retired'],datasets:eqDs([[30,24,38,32],[17,22,14,18],[35,29,34,30],[18,25,14,20]])},options:eqOpts});
+new Chart('c-occ',{type:'bar',data:{labels:['Service','Desk/Office','Manual Labor','Healthcare','Other'],
+datasets:eqDs([
+  [31,34,32,33,30],  // Acute M/M
+  [17,16,22,15,18],  // Acute Severe
+  [33,33,29,34,35],  // Subacute
+  [19,17,17,18,17]   // Chronic
+])},options:eqOpts});
 new Chart('c-reg',{type:'bar',data:{labels:['Northeast','Midwest','South','West'],datasets:eqDs([[33,31,36,34],[17,19,16,18],[33,32,35,31],[17,18,13,17]])},options:eqOpts});
 
 new Chart('c-acc',{type:'doughnut',data:{labels:['Correct — 81%','Incorrect — 19%'],datasets:[{data:[81,19],backgroundColor:[cv('--suc'),cv('--err')],borderWidth:0,hoverOffset:8}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'bottom',labels:{color:tm(),padding:12,boxWidth:12}}}}});
