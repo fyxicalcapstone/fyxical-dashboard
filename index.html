@@ -77,7 +77,6 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
 
 /* PAGE HEADER */
 .ph{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.ph-l{}
 .pgtitle{font-size:var(--txxl);font-weight:700;color:var(--tx);line-height:1.2}
 .pgsub{font-size:var(--txsm);color:var(--txm);margin-top:4px}
 .pg-nav{display:flex;align-items:center;gap:6px;flex-shrink:0}
@@ -93,7 +92,7 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.g7{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.g3s{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 
 /* KPI CARD */
 .kc{background:var(--sur);border:1px solid var(--brd);border-radius:var(--r6);padding:16px 18px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:6px}
@@ -132,7 +131,7 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
 
 /* NOTE */
 .note{border-radius:var(--r6);padding:14px 18px;border:1px solid var(--brd)}
-.note.nw{background:var(--warl);border-color:var(--war)}.note.ni{background:var(--blul);border-color:var(--blu)}.note.ns{background:var(--sucl);border-color:var(--suc)}
+.note.nw{background:var(--warl);border-color:var(--war)}.note.ni2{background:var(--blul);border-color:var(--blu)}.note.ns{background:var(--sucl);border-color:var(--suc)}
 .note-ttl{font-size:var(--txs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--txm);margin-bottom:6px}
 .note p{font-size:var(--txsm);color:var(--txm);line-height:1.7;max-width:none}
 .note strong{color:var(--tx)}
@@ -151,7 +150,7 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
 @media(max-width:860px){
   body{grid-template-columns:1fr}
   .sb{display:none}
-  .g2,.g3,.g4,.g7{grid-template-columns:1fr}
+  .g2,.g3,.g4,.g3s{grid-template-columns:1fr}
   .cc.wide{grid-column:1}
   .hdr-mid{display:none}
 }
@@ -167,8 +166,8 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
     </svg>
     Fyxical
   </div>
-  <div class="hdr-mid">Clinical Analytics &mdash; Low Back Pain &nbsp;·&nbsp; fyxical-poc &nbsp;·&nbsp; BigQuery / Vertex AI</div>
-  <span class="poc">POC · Not Clinically Validated</span>
+  <div class="hdr-mid">Clinical Analytics &middot; Low Back Pain &middot; fyxical-poc &middot; BigQuery / Vertex AI</div>
+  <span class="poc">POC &middot; Not Clinically Validated</span>
   <button class="tgl" data-theme-toggle aria-label="Toggle theme">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
@@ -199,27 +198,23 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
     Exercise Library
   </button>
   <div style="flex:1"></div>
-  <div class="sbft">BigQuery · Vertex AI<br>Looker Studio Mock-up<br>MSBA Capstone</div>
+  <div class="sbft">BigQuery &middot; Vertex AI<br>Looker Studio Mock-up<br>MSBA Capstone</div>
 </nav>
 
 <main class="main">
 
-<!-- ═══════════════════════════════ PAGE 0: KPI ═══════════════════════════════ -->
+<!-- PAGE 0: KPI -->
 <section class="pg on" id="pg0">
   <div class="ph">
     <div class="ph-l">
-      <div class="bc"><span>Dashboard</span> › KPI Scoreboard</div>
+      <div class="bc"><span>Dashboard</span> &rsaquo; KPI Scoreboard</div>
       <h1 class="pgtitle">KPI Scoreboard</h1>
-      <p class="pgsub">Aggregate metrics · 500 synthetic patients · Rule engine + model performance</p>
+      <p class="pgsub">Aggregate metrics &middot; 500 synthetic patients &middot; Deterministic rule engine and logistic regression model</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
       <div class="pg-nav">
-        <button class="pn-btn" disabled onclick="go(0)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Prev
-        </button>
-        <button class="pn-btn" onclick="go(1)">
-          Next <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
+        <button class="pn-btn" disabled><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Prev</button>
+        <button class="pn-btn" onclick="go(1)">Next <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
       <div class="pdots">
         <div class="pdot on" onclick="go(0)" title="KPI Scoreboard"></div>
@@ -230,18 +225,20 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
       </div>
     </div>
   </div>
-  <div class="g7">
-    <div class="kc ap"><div class="kc-l">Total Patients</div><div class="kc-v">500</div><div class="kc-d">Synthetic cohort</div></div>
-    <div class="kc ap"><div class="kc-l">Pathways</div><div class="kc-v">4</div><div class="kc-d">Rule-based engine</div></div>
-    <div class="kc as"><div class="kc-l">Rule-Agreement</div><div class="kc-v">82%</div><div class="kc-d">LR vs. rule engine</div></div>
-    <div class="kc"><div class="kc-l">Exercise Groups</div><div class="kc-v">19</div><div class="kc-d">All pathways</div></div>
-    <div class="kc a1"><div class="kc-l">Acute</div><div class="kc-v">130</div><div class="kc-d">Pain &lt; 2 weeks</div></div>
-    <div class="kc a3"><div class="kc-l">Subacute</div><div class="kc-v">181</div><div class="kc-d">2–12 weeks</div></div>
-    <div class="kc a4"><div class="kc-l">Chronic</div><div class="kc-v">189</div><div class="kc-d">&gt;12 wks / high OSW</div></div>
+  <div class="g3s">
+    <div class="kc ap"><div class="kc-l">Total Patients</div><div class="kc-v">500</div><div class="kc-d">Synthetic patient cohort</div></div>
+    <div class="kc ap"><div class="kc-l">Pathways</div><div class="kc-v">4</div><div class="kc-d">Deterministic rule engine</div></div>
+    <div class="kc as"><div class="kc-l">Model Agreement</div><div class="kc-v">81%</div><div class="kc-d">Logistic regression vs. rule engine &middot; test n=100</div></div>
+  </div>
+  <div class="g4">
+    <div class="kc a1"><div class="kc-l">Acute M/M</div><div class="kc-v">85</div><div class="kc-d">Pain &lt;2 wks, VAS &le;6</div></div>
+    <div class="kc a2"><div class="kc-l">Acute Severe</div><div class="kc-v">45</div><div class="kc-d">Pain &lt;2 wks, VAS &gt;6</div></div>
+    <div class="kc a3"><div class="kc-l">Subacute</div><div class="kc-v">181</div><div class="kc-d">2&ndash;12 weeks</div></div>
+    <div class="kc a4"><div class="kc-l">Chronic</div><div class="kc-v">189</div><div class="kc-d">&gt;12 wks or high OSW score</div></div>
   </div>
   <div class="g2">
     <div class="cc">
-      <div><div class="ct">Patients per Pathway</div><div class="cs">Rule-engine assignment (n=500)</div></div>
+      <div><div class="ct">Patients per Pathway</div><div class="cs">Deterministic rule engine assignment (n=500)</div></div>
       <div class="cw"><canvas id="c-pathbar"></canvas></div>
       <div class="leg">
         <div class="li"><div class="ld" style="background:var(--c1)"></div>Acute M/M</div>
@@ -251,23 +248,23 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
       </div>
     </div>
     <div class="cc">
-      <div><div class="ct">Duration Cohort Split</div><div class="cs">Acute / Subacute / Chronic proportion</div></div>
+      <div><div class="ct">Duration Cohort Split</div><div class="cs">Acute / Subacute / Chronic proportion (n=500)</div></div>
       <div class="cw"><canvas id="c-durdough"></canvas></div>
     </div>
   </div>
   <div class="note nw">
-    <div class="note-ttl">⚠ Model Accuracy Note</div>
-    <p><strong>The 82% rule-agreement rate</strong> reflects agreement between the logistic regression model and the rule engine on held-out patients. It confirms the rule logic is consistent and automatable — <strong>it does not validate clinical outcomes.</strong> Full clinical validation requires real patient follow-up data (Phase 2). Planned upgrade: HITL validation by a licensed PT on 50–75 edge cases.</p>
+    <div class="note-ttl">&#x26A0; Model Agreement Note</div>
+    <p><strong>The 81% model agreement rate</strong> reflects agreement between the logistic regression model and the deterministic rule engine on a held-out test set of 100 patients (80/20 train/test split). The model learned the rule logic and can reproduce it consistently. <strong>This does not validate clinical outcomes.</strong> Full clinical validation requires real patient follow-up data and is planned for Phase 2. Planned upgrade: HITL validation by a licensed PT on 50&ndash;75 edge cases.</p>
   </div>
 </section>
 
-<!-- ═══════════════════════════ PAGE 1: CLINICAL ════════════════════════════ -->
+<!-- PAGE 1: CLINICAL -->
 <section class="pg" id="pg1">
   <div class="ph">
     <div class="ph-l">
-      <div class="bc"><span>Dashboard</span> › Clinical Distributions</div>
+      <div class="bc"><span>Dashboard</span> &rsaquo; Clinical Distributions</div>
       <h1 class="pgtitle">Clinical Distributions</h1>
-      <p class="pgsub">Pain severity (VAS), OSW disability, and duration patterns across the patient cohort</p>
+      <p class="pgsub">VAS pain score, Oswestry Disability Index, and duration category distributions across the synthetic patient cohort</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
       <div class="pg-nav">
@@ -281,21 +278,21 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
     </div>
   </div>
   <div class="g3">
-    <div class="cc"><div><div class="ct">Pain Duration Category</div><div class="cs">Acute &lt;2 wks · Subacute 2-12 wks · Chronic &gt;12 wks</div></div><div class="cw"><canvas id="c-durcat"></canvas></div></div>
-    <div class="cc"><div><div class="ct">Pain Severity (VAS)</div><div class="cs">Mild 0-3 · Moderate 4-6 · Severe 7-10</div></div><div class="cw"><canvas id="c-sevcat"></canvas></div></div>
-    <div class="cc"><div><div class="ct">OSW Disability Category</div><div class="cs">Oswestry Disability Index %</div></div><div class="cw"><canvas id="c-oswcat"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Pain Duration Category</div><div class="cs">Acute &lt;2 wks &middot; Subacute 2&ndash;12 wks &middot; Chronic &gt;12 wks</div></div><div class="cw"><canvas id="c-durcat"></canvas></div></div>
+    <div class="cc"><div><div class="ct">VAS Pain Severity</div><div class="cs">Mild 0&ndash;3 &middot; Moderate 4&ndash;6 &middot; Severe 7&ndash;10</div></div><div class="cw"><canvas id="c-sevcat"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Oswestry Disability Index</div><div class="cs">OSW disability category distribution (%)</div></div><div class="cw"><canvas id="c-oswcat"></canvas></div></div>
   </div>
   <div class="g2">
-    <div class="cc"><div><div class="ct">Pain Score vs OSW Disability</div><div class="cs">By assigned pathway · r = 0.61</div></div><div class="cw"><canvas id="c-sc1"></canvas></div></div>
-    <div class="cc"><div><div class="ct">Pain Duration vs OSW Disability</div><div class="cs">By assigned pathway · r = 0.44</div></div><div class="cw"><canvas id="c-sc2"></canvas></div></div>
+    <div class="cc"><div><div class="ct">VAS Pain Score vs. OSW Disability</div><div class="cs">By assigned pathway &middot; r = 0.61</div></div><div class="cw"><canvas id="c-sc1"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Pain Duration vs. OSW Disability</div><div class="cs">By assigned pathway &middot; r = 0.44</div></div><div class="cw"><canvas id="c-sc2"></canvas></div></div>
   </div>
   <div class="cc wide">
-    <div><div class="ct">Patient Count: Duration × OSW Category</div><div class="cs">Pivot — distribution across clinical intersections</div></div>
+    <div><div class="ct">Patient Count: Duration Category x OSW Category</div><div class="cs">Pivot table showing distribution across clinical feature intersections (n=500)</div></div>
     <div class="tw"><table class="dt">
-      <thead><tr><th>Duration / OSW</th><th>Minimal (0–20%)</th><th>Moderate (21–40%)</th><th>Severe (41–60%)</th><th>Crippled (61–80%)</th><th>Bed-bound (81–100%)</th><th>Total</th></tr></thead>
+      <thead><tr><th>Duration / OSW</th><th>Minimal (0&ndash;20%)</th><th>Moderate (21&ndash;40%)</th><th>Severe (41&ndash;60%)</th><th>Crippled (61&ndash;80%)</th><th>Bed-bound (81&ndash;100%)</th><th>Total</th></tr></thead>
       <tbody>
         <tr><td><strong>Acute (&lt;2 wks)</strong></td><td>38</td><td>24</td><td>14</td><td>7</td><td>2</td><td><strong>85</strong></td></tr>
-        <tr><td><strong>Subacute (2–12 wks)</strong></td><td>52</td><td>61</td><td>39</td><td>21</td><td>8</td><td><strong>181</strong></td></tr>
+        <tr><td><strong>Subacute (2&ndash;12 wks)</strong></td><td>52</td><td>61</td><td>39</td><td>21</td><td>8</td><td><strong>181</strong></td></tr>
         <tr><td><strong>Chronic (&gt;12 wks)</strong></td><td>41</td><td>68</td><td>57</td><td>49</td><td>19</td><td><strong>234</strong></td></tr>
         <tr><td><strong>Total</strong></td><td><strong>131</strong></td><td><strong>153</strong></td><td><strong>110</strong></td><td><strong>77</strong></td><td><strong>29</strong></td><td><strong>500</strong></td></tr>
       </tbody>
@@ -303,13 +300,13 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
   </div>
 </section>
 
-<!-- ═════════════════════════════ PAGE 2: EQUITY ════════════════════════════ -->
+<!-- PAGE 2: EQUITY -->
 <section class="pg" id="pg2">
   <div class="ph">
     <div class="ph-l">
-      <div class="bc"><span>Dashboard</span> › Equity Monitoring</div>
+      <div class="bc"><span>Dashboard</span> &rsaquo; Equity Monitoring</div>
       <h1 class="pgtitle">Equity Monitoring</h1>
-      <p class="pgsub">Pathway distributions by demographic subgroup · Demographics do NOT influence assignment — for bias detection only</p>
+      <p class="pgsub">Pathway distributions by demographic subgroup &middot; Demographic variables are not inputs to the rule engine or model</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
       <div class="pg-nav">
@@ -323,26 +320,26 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
     </div>
   </div>
   <div class="g2">
-    <div class="cc"><div><div class="ct">Pathway by Sex</div><div class="cs">100% stacked — proportional pathway assignment</div></div><div class="cw"><canvas id="c-sex"></canvas></div></div>
-    <div class="cc"><div><div class="ct">Pathway by Race / Ethnicity</div><div class="cs">100% stacked — proportional pathway assignment</div></div><div class="cw"><canvas id="c-race"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Pathway Assignment by Sex</div><div class="cs">100% stacked bar &middot; proportional pathway assignment per group</div></div><div class="cw"><canvas id="c-sex"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Pathway Assignment by Race / Ethnicity</div><div class="cs">100% stacked bar &middot; proportional pathway assignment per group</div></div><div class="cw"><canvas id="c-race"></canvas></div></div>
   </div>
   <div class="g2">
-    <div class="cc"><div><div class="ct">Pathway by Occupation Type</div><div class="cs">Sedentary · Manual · Mixed · Retired</div></div><div class="cw"><canvas id="c-occ"></canvas></div></div>
-    <div class="cc"><div><div class="ct">Pathway by Census Region</div><div class="cs">Northeast · Midwest · South · West</div></div><div class="cw"><canvas id="c-reg"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Pathway Assignment by Occupation Type</div><div class="cs">Sedentary &middot; Manual &middot; Mixed &middot; Retired</div></div><div class="cw"><canvas id="c-occ"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Pathway Assignment by Census Region</div><div class="cs">Northeast &middot; Midwest &middot; South &middot; West</div></div><div class="cw"><canvas id="c-reg"></canvas></div></div>
   </div>
-  <div class="note ni">
-    <div class="note-ttl">ℹ Equity Monitoring Rationale</div>
-    <p><strong>Demographic variables are for monitoring only.</strong> They are not inputs to the pathway assignment rule engine or the ML model. Two patients with identical OSW %, pain score, and duration receive the same pathway regardless of sex, race, or occupation. Any statistically significant difference in outcomes across groups warrants clinical review as a potential proxy-variable bias signal.</p>
+  <div class="note ni2">
+    <div class="note-ttl">&#x2139; Equity Monitoring Rationale</div>
+    <p><strong>Demographic variables are included for post-hoc monitoring only.</strong> Sex, race/ethnicity, occupation, and region are not features in the rule engine or the logistic regression model. Pathway assignment is determined solely by VAS pain score, pain duration, and Oswestry Disability Index score. Two patients with identical clinical inputs receive the same pathway regardless of demographic profile. Any statistically significant disparity across groups should be reviewed as a potential proxy-variable bias signal.</p>
   </div>
 </section>
 
-<!-- ══════════════════════════════ PAGE 3: ML ═══════════════════════════════ -->
+<!-- PAGE 3: ML -->
 <section class="pg" id="pg3">
   <div class="ph">
     <div class="ph-l">
-      <div class="bc"><span>Dashboard</span> › ML Predictions</div>
+      <div class="bc"><span>Dashboard</span> &rsaquo; ML Predictions</div>
       <h1 class="pgtitle">ML Prediction Results</h1>
-      <p class="pgsub">Logistic regression vs. rule engine agreement on held-out patient set</p>
+      <p class="pgsub">Logistic regression model agreement with the deterministic rule engine &middot; held-out test set &middot; 80/20 train/test split &middot; n=100</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
       <div class="pg-nav">
@@ -356,39 +353,39 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
     </div>
   </div>
   <div class="g4">
-    <div class="kc as"><div class="kc-l">Correct Predictions</div><div class="kc-v">410</div><div class="kc-d">82.0% agreement</div></div>
-    <div class="kc"><div class="kc-l">Incorrect Predictions</div><div class="kc-v">90</div><div class="kc-d">18.0% divergence</div></div>
-    <div class="kc aw"><div class="kc-l">Most Confused Pair</div><div class="kc-v" style="font-size:var(--txl)">Sub→Chr</div><div class="kc-d">38 patients</div></div>
+    <div class="kc as"><div class="kc-l">Correct Predictions</div><div class="kc-v">81</div><div class="kc-d">81.0% model agreement</div></div>
+    <div class="kc"><div class="kc-l">Incorrect Predictions</div><div class="kc-v">19</div><div class="kc-d">19.0% misclassification rate</div></div>
+    <div class="kc aw"><div class="kc-l">Most Confused Pair</div><div class="kc-v" style="font-size:var(--txl)">Sub&rarr;Chr</div><div class="kc-d">~8 patients misclassified</div></div>
     <div class="kc"><div class="kc-l">Validation Status</div><div class="kc-v" style="font-size:var(--txl)">POC</div><div class="kc-d">Rule-agreement only</div></div>
   </div>
   <div class="g2">
-    <div class="cc"><div><div class="ct">Rule-Agreement Rate</div><div class="cs">Correct vs. Incorrect (n=500)</div></div><div class="cw"><canvas id="c-acc"></canvas></div></div>
-    <div class="cc"><div><div class="ct">Confusion by Pathway Pair</div><div class="cs">Incorrect predictions broken down by mismatch type</div></div><div class="cw"><canvas id="c-conf"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Model Agreement Rate</div><div class="cs">Correct vs. Incorrect predictions &middot; test set n=100</div></div><div class="cw"><canvas id="c-acc"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Misclassification by Pathway Pair</div><div class="cs">Breakdown of 19 incorrect predictions by misclassification type</div></div><div class="cw"><canvas id="c-conf"></canvas></div></div>
   </div>
   <div class="cc wide">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div><div class="ct">Prediction Detail — Sample Records</div><div class="cs">Click to filter by outcome</div></div>
+      <div><div class="ct">Prediction Detail &middot; Sample Records</div><div class="cs">Illustrative patient records showing rule pathway vs. predicted pathway</div></div>
       <div class="frow">
         <button class="fb on" onclick="filt('all',this)">All (10)</button>
         <button class="fb" onclick="filt('correct',this)">Correct Only</button>
         <button class="fb" onclick="filt('incorrect',this)">Incorrect Only</button>
       </div>
     </div>
-    <div class="tw"><table class="dt"><thead><tr><th>Patient ID</th><th>Rule Pathway</th><th>Predicted Pathway</th><th>Duration</th><th>Severity</th><th>OSW</th><th>Status</th></tr></thead><tbody id="ptb"></tbody></table></div>
+    <div class="tw"><table class="dt"><thead><tr><th>Patient ID</th><th>Rule Pathway</th><th>Predicted Pathway</th><th>Duration</th><th>VAS Severity</th><th>OSW Category</th><th>Status</th></tr></thead><tbody id="ptb"></tbody></table></div>
   </div>
   <div class="note nw">
-    <div class="note-ttl">⚠ Validation Status: POC — Rule Agreement Only</div>
-    <p><strong>Labels were generated by our rule engine.</strong> High accuracy confirms the model learned the rule logic — it does not confirm clinical effectiveness.<br><br><strong>Planned Phase 1 Upgrade — HITL Validation:</strong> A licensed PT will independently label 50–75 edge cases blind to rule outputs, converting this metric from rule-agreement to clinical-expert-agreement.</p>
+    <div class="note-ttl">&#x26A0; Validation Status: POC &middot; Rule Agreement Only</div>
+    <p><strong>Training labels were generated by the deterministic rule engine, not by clinical experts.</strong> An 81% agreement rate confirms the logistic regression model successfully learned the rule logic. It does not confirm clinical effectiveness or patient outcomes. <strong>Planned Phase 2 Upgrade: HITL Validation.</strong> A licensed physical therapist will independently label 50&ndash;75 edge cases blind to rule engine outputs. This will convert the agreement metric from rule-agreement to clinical-expert-agreement.</p>
   </div>
 </section>
 
-<!-- ════════════════════════════ PAGE 4: EXERCISES ══════════════════════════ -->
+<!-- PAGE 4: EXERCISES -->
 <section class="pg" id="pg4">
   <div class="ph">
     <div class="ph-l">
-      <div class="bc"><span>Dashboard</span> › Exercise Library</div>
+      <div class="bc"><span>Dashboard</span> &rsaquo; Exercise Library</div>
       <h1 class="pgtitle">Exercise Library</h1>
-      <p class="pgsub">19 exercise groups across all 4 pathways · Mapped by Category_Code from BigQuery exercises table</p>
+      <p class="pgsub">19 exercise groups across 4 pathways &middot; Mapped by Category_Code from the BigQuery exercises table</p>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
       <div class="pg-nav">
@@ -402,11 +399,11 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
     </div>
   </div>
   <div class="g2">
-    <div class="cc"><div><div class="ct">Exercises per Pathway</div><div class="cs">Number of exercise groups assigned</div></div><div class="cw"><canvas id="c-excnt"></canvas></div></div>
-    <div class="cc"><div><div class="ct">Exercise Difficulty Split</div><div class="cs">Beginner / Intermediate / Advanced</div></div><div class="cw"><canvas id="c-diff"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Exercise Groups per Pathway</div><div class="cs">Number of exercise groups assigned per treatment pathway</div></div><div class="cw"><canvas id="c-excnt"></canvas></div></div>
+    <div class="cc"><div><div class="ct">Exercise Difficulty Distribution</div><div class="cs">Beginner / Intermediate / Advanced across all 19 groups</div></div><div class="cw"><canvas id="c-diff"></canvas></div></div>
   </div>
   <div class="cc wide">
-    <div><div class="ct">Full Exercise Reference</div><div class="cs">All 19 groups · Category_Code, group name, difficulty, pathway assignment</div></div>
+    <div><div class="ct">Full Exercise Reference</div><div class="cs">All 19 groups &middot; Category_Code, group name, difficulty level, progression level, and pathway assignments</div></div>
     <div class="tw"><table class="dt">
       <thead><tr><th>Category_Code</th><th>Exercise Group</th><th>Difficulty</th><th>Progression_Level</th><th>Pathways</th></tr></thead>
       <tbody>
@@ -437,7 +434,6 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
 </main>
 
 <script>
-// ── THEME TOGGLE ──────────────────────────────────────────────────
 (function(){
   var t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
   var d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
@@ -446,7 +442,6 @@ a,button,[role=button],input,select{transition:color var(--tr),background var(--
   if(t){t.innerHTML=ic(d);t.addEventListener('click',function(){d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.innerHTML=ic(d);});}
 })();
 
-// ── NAVIGATION ────────────────────────────────────────────────────
 var cur=0;
 function go(n){
   document.getElementById('pg'+cur).classList.remove('on');
@@ -457,7 +452,6 @@ function go(n){
   document.querySelector('.main').scrollTop=0;
 }
 
-// ── CHART HELPERS ─────────────────────────────────────────────────
 function cv(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
 function gc(){return cv('--div');}
 function tm(){return cv('--txm');}
@@ -468,20 +462,17 @@ var LABELS=['Acute M/M','Acute Severe','Subacute','Chronic'];
 Chart.defaults.font.family="'Inter','Helvetica Neue',sans-serif";
 Chart.defaults.font.size=11;
 
-// KPI PAGE
 new Chart('c-pathbar',{type:'bar',data:{labels:LABELS,datasets:[{data:[85,45,181,189],backgroundColor:pc(),borderRadius:6,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
 new Chart('c-durdough',{type:'doughnut',data:{labels:['Acute (130)','Subacute (181)','Chronic (189)'],datasets:[{data:[130,181,189],backgroundColor:[cv('--c1'),cv('--c3'),cv('--c4')],borderWidth:0,hoverOffset:8}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'bottom',labels:{color:tm(),padding:12,boxWidth:11}}}}});
 
-// CLINICAL PAGE
 new Chart('c-durcat',{type:'bar',data:{labels:['Acute','Subacute','Chronic'],datasets:[{data:[130,181,189],backgroundColor:[cv('--c1'),cv('--c3'),cv('--c4')],borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
 new Chart('c-sevcat',{type:'bar',data:{labels:['Mild','Moderate','Severe'],datasets:[{data:[148,192,160],backgroundColor:[cv('--suc'),cv('--war'),cv('--err')],borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
 new Chart('c-oswcat',{type:'bar',data:{labels:['Minimal','Moderate','Severe','Crippled','Bed-bound'],datasets:[{data:[131,153,110,77,29],backgroundColor:cv('--pri'),borderRadius:5}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm(),maxRotation:25}},y:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true}}}});
 
 function rnd(n,xr,yr,ns){return Array.from({length:n},function(){var x=xr[0]+Math.random()*(xr[1]-xr[0]);var y=Math.max(0,Math.min(100,(x/xr[1])*(yr[1]-yr[0])*0.7+yr[0]+(Math.random()-0.5)*ns));return{x:+x.toFixed(1),y:+y.toFixed(1)};});}
-new Chart('c-sc1',{type:'scatter',data:{datasets:[{label:'Acute M/M',data:rnd(85,[0,6],[0,40],18),backgroundColor:cv('--c1')+'99',pointRadius:3},{label:'Acute Sev',data:rnd(45,[5,10],[20,60],18),backgroundColor:cv('--c2')+'99',pointRadius:3},{label:'Subacute',data:rnd(181,[2,8],[20,70],22),backgroundColor:cv('--c3')+'99',pointRadius:3},{label:'Chronic',data:rnd(189,[4,10],[40,100],18),backgroundColor:cv('--c4')+'99',pointRadius:3}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{color:tm(),boxWidth:10,padding:8}}},scales:{x:{title:{display:true,text:'Pain Score (VAS 0–10)',color:tm()},grid:{color:gc()},ticks:{color:tm()}},y:{title:{display:true,text:'OSW Disability %',color:tm()},grid:{color:gc()},ticks:{color:tm()}}}}});
+new Chart('c-sc1',{type:'scatter',data:{datasets:[{label:'Acute M/M',data:rnd(85,[0,6],[0,40],18),backgroundColor:cv('--c1')+'99',pointRadius:3},{label:'Acute Sev',data:rnd(45,[5,10],[20,60],18),backgroundColor:cv('--c2')+'99',pointRadius:3},{label:'Subacute',data:rnd(181,[2,8],[20,70],22),backgroundColor:cv('--c3')+'99',pointRadius:3},{label:'Chronic',data:rnd(189,[4,10],[40,100],18),backgroundColor:cv('--c4')+'99',pointRadius:3}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{color:tm(),boxWidth:10,padding:8}}},scales:{x:{title:{display:true,text:'VAS Pain Score (0-10)',color:tm()},grid:{color:gc()},ticks:{color:tm()}},y:{title:{display:true,text:'OSW Disability %',color:tm()},grid:{color:gc()},ticks:{color:tm()}}}}});
 new Chart('c-sc2',{type:'scatter',data:{datasets:[{label:'Acute M/M',data:rnd(85,[0,2],[0,40],18),backgroundColor:cv('--c1')+'99',pointRadius:3},{label:'Acute Sev',data:rnd(45,[0,2],[20,65],18),backgroundColor:cv('--c2')+'99',pointRadius:3},{label:'Subacute',data:rnd(181,[2,12],[20,75],22),backgroundColor:cv('--c3')+'99',pointRadius:3},{label:'Chronic',data:rnd(189,[12,52],[35,100],18),backgroundColor:cv('--c4')+'99',pointRadius:3}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{color:tm(),boxWidth:10,padding:8}}},scales:{x:{title:{display:true,text:'Pain Duration (weeks)',color:tm()},grid:{color:gc()},ticks:{color:tm()}},y:{title:{display:true,text:'OSW Disability %',color:tm()},grid:{color:gc()},ticks:{color:tm()}}}}});
 
-// EQUITY PAGE
 var eqOpts={responsive:true,plugins:{legend:{position:'bottom',labels:{color:tm(),boxWidth:10,padding:8}}},scales:{x:{stacked:true,grid:{color:gc()},ticks:{color:tm()}},y:{stacked:true,max:100,grid:{color:gc()},ticks:{color:tm(),callback:function(v){return v+'%';}}}}};
 function eqDs(rows){return LABELS.map(function(lbl,i){return{label:lbl,data:rows.map(function(r){return r[i];}),backgroundColor:pc()[i],stack:'s'};});}
 new Chart('c-sex',{type:'bar',data:{labels:['Female','Male','Non-binary'],datasets:eqDs([[34,29,36],[18,17,10],[34,34,37],[14,20,17]])},options:eqOpts});
@@ -489,11 +480,9 @@ new Chart('c-race',{type:'bar',data:{labels:['White','Hispanic','Black','Asian',
 new Chart('c-occ',{type:'bar',data:{labels:['Sedentary','Manual','Mixed','Retired'],datasets:eqDs([[30,24,38,32],[17,22,14,18],[35,29,34,30],[18,25,14,20]])},options:eqOpts});
 new Chart('c-reg',{type:'bar',data:{labels:['Northeast','Midwest','South','West'],datasets:eqDs([[33,31,36,34],[17,19,16,18],[33,32,35,31],[17,18,13,17]])},options:eqOpts});
 
-// ML PAGE
-new Chart('c-acc',{type:'doughnut',data:{labels:['Correct — 82%','Incorrect — 18%'],datasets:[{data:[410,90],backgroundColor:[cv('--suc'),cv('--err')],borderWidth:0,hoverOffset:8}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'bottom',labels:{color:tm(),padding:12,boxWidth:12}}}}});
-new Chart('c-conf',{type:'bar',data:{labels:['Sub → Chronic','Acute Sev → Sub','Acute MM → Sev','Chronic → Sub','Other'],datasets:[{data:[38,22,14,11,5],backgroundColor:cv('--err'),borderRadius:5}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true},y:{grid:{display:false},ticks:{color:tm()}}}}});
+new Chart('c-acc',{type:'doughnut',data:{labels:['Correct — 81%','Incorrect — 19%'],datasets:[{data:[81,19],backgroundColor:[cv('--suc'),cv('--err')],borderWidth:0,hoverOffset:8}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'bottom',labels:{color:tm(),padding:12,boxWidth:12}}}}});
+new Chart('c-conf',{type:'bar',data:{labels:['Sub → Chronic','Acute Sev → Sub','Acute MM → Sev','Chronic → Sub','Other'],datasets:[{data:[8,5,3,2,1],backgroundColor:cv('--err'),borderRadius:5}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()},beginAtZero:true},y:{grid:{display:false},ticks:{color:tm()}}}}});
 
-// PREDICTION TABLE
 var PB={'ACUTE_MILD_MOD':'bt','ACUTE_SEVERE':'bo','SUBACUTE':'bb','CHRONIC':'bp'};
 var PS={'ACUTE_MILD_MOD':'Acute M/M','ACUTE_SEVERE':'Acute Sev','SUBACUTE':'Subacute','CHRONIC':'Chronic'};
 var rows=[
@@ -511,7 +500,7 @@ var rows=[
 function renderTable(f){
   var data=f==='all'?rows:rows.filter(function(r){return f==='correct'?r[6]:!r[6];});
   document.getElementById('ptb').innerHTML=data.map(function(r){
-    return '<tr><td><code style="font-size:10px">'+r[0]+'</code></td><td><span class="b '+PB[r[1]]+'">'+PS[r[1]]+'</span></td><td><span class="b '+PB[r[2]]+'">'+PS[r[2]]+'</span></td><td>'+r[3]+'</td><td>'+r[4]+'</td><td>'+r[5]+'</td><td><span class="b '+(r[6]?'bg':'br')+'">'+(r[6]?'✓ Correct':'✗ Incorrect')+'</span></td></tr>';
+    return '<tr><td><code style="font-size:10px">'+r[0]+'</code></td><td><span class="b '+PB[r[1]]+'">'+PS[r[1]]+'</span></td><td><span class="b '+PB[r[2]]+'">'+PS[r[2]]+'</span></td><td>'+r[3]+'</td><td>'+r[4]+'</td><td>'+r[5]+'</td><td><span class="b '+(r[6]?'bg':'br')+'">'+(r[6]?'&#x2713; Correct':'&#x2717; Incorrect')+'</span></td></tr>';
   }).join('');
 }
 function filt(f,btn){
@@ -521,7 +510,6 @@ function filt(f,btn){
 }
 renderTable('all');
 
-// EXERCISES PAGE
 new Chart('c-excnt',{type:'bar',data:{labels:LABELS,datasets:[{data:[6,5,7,9],backgroundColor:pc(),borderRadius:6}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:gc()},ticks:{color:tm()}},y:{grid:{color:gc()},ticks:{color:tm(),stepSize:1},beginAtZero:true}}}});
 new Chart('c-diff',{type:'doughnut',data:{labels:['Beginner (9)','Intermediate (9)','Advanced (1)'],datasets:[{data:[9,9,1],backgroundColor:[cv('--suc'),cv('--pri'),cv('--pur')],borderWidth:0,hoverOffset:6}]},options:{responsive:true,cutout:'60%',plugins:{legend:{position:'bottom',labels:{color:tm(),padding:12,boxWidth:12}}}}});
 </script>
